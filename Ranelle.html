@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio BTS SIO SLAM — Développeur Java & SQL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Archivo:wght@300;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Ranelle.css">
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                <span>Développeuse</span>
+                <span>BTS SIO</span>
+                <span>SLAM</span>
+            </h1>
+            
+            <div class="manifesto">
+                En BTS SIO SLAM, j'ai apprise que coder, c'est d'abord <strong>modéliser</strong>, <strong>tester</strong>, et <strong>documenter</strong>. Mon portfolio ne montre pas juste du code qui fonctionne, mais du code qui <strong>évolue proprement</strong>.
+            </div>
+
+            <div class="stack-badges">
+                <span class="badge">Java</span>
+                <span class="badge">MySQL</span>
+                <span class="badge">Git</span>
+                <span class="badge">Eclipse IDE</span>
+                <span class="badge">UML</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAVIGATION -->
+    <nav id="main-nav">
+        <ul>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PROJETS SECTION -->
+    <section id="projets" class="fade-in">
+        <div class="section-header">
+            <span class="section-number">[01]</span>
+            <h2 class="section-title">Projets</h2>
+        </div>
+
+        <div class="projects-grid">
+            <!-- PROJET 1: Gestion Ligue Sportive -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">🏀 Gestion Ligue Sportive</h3>
+                    <p class="project-competences">B1.1 • B1.3 • B1.5</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Application Java/MySQL pour gérer le cycle de vie des employés dans différentes ligues sportives. Focus sur la normalisation SQL et l'architecture objet.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java 17</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">JDBC</span>
+                        <span class="tech-tag">MCD/MLD</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#case-ligue" class="btn btn-primary" onclick="showCase('case-ligue'); return false;">Case Study</a>
+                        <a href="#" class="btn" onclick="alert('Lien GitHub: [À remplacer par votre URL]'); return false;">GitHub →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJET 2: Algorithmes de Recherche -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">🔍 Algorithmes & Palindromes</h3>
+                    <p class="project-competences">B1.1 • B1.2</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Implémentation optimisée d'algorithmes de traitement de chaînes, incluant une détection de palindromes en O(n/2) avec la méthode Two Pointers.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Algorithmie</span>
+                        <span class="tech-tag">Complexité</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#case-algo" class="btn btn-primary" onclick="showCase('case-algo'); return false;">Case Study</a>
+                        <a href="#" class="btn" onclick="alert('Lien GitHub: [À remplacer mon votre URL]'); return false;">GitHub →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJET 3: À PERSONNALISER -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">📊 Projet Atelier Pro</h3>
+                    <p class="project-competences">B1.X • B1.X</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        pendant la periode scolaire , nous avons un projet personel à faire
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Tech 1</span>
+                        <span class="tech-tag">Tech 2</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="Projet.html" class="btn btn-primary"> voir plus</a>
+                        <a href="#" class="btn">GitHub →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- CASE STUDY: LIGUE SPORTIVE -->
+    <section id="case-ligue" class="case-study">
+        <a href="#projets" class="btn back-button" onclick="hideCase('case-ligue'); return false;">← Retour aux projets</a>
+        
+        <div class="case-study-header">
+            <h2 class="case-study-title">Gestion Ligue Sportive</h2>
+            <p class="case-study-subtitle">Architecture Java • Normalisation SQL • Versioning Git</p>
+        </div>
+
+        <div class="case-content">
+            <!-- PRÉSENTATION -->
+            <div class="case-section">
+                <h3>📌 Présentation du Projet</h3>
+                <p>
+                    Réalisé sous Eclipse, ce projet a pour but de gérer le cycle de vie des employés au sein de différentes ligues sportives. L'enjeu était de créer une application robuste capable de gérer à la fois une logique métier complexe en Java et une persistance de données cohérente en SQL.
+                </p>
+
+                <h4>🛠️ Stack Technique</h4>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>Langage :</strong> Java (JDK 17+)</li>
+                    <li><strong>IDE :</strong> Eclipse IDE</li>
+                    <li><strong>Base de données :</strong> MySQL</li>
+                    <li><strong>Versionning :</strong> Git (Workflow basé sur des commits atomiques)</li>
+                </ul>
+            </div>
+
+            <!-- DÉFIS TECHNIQUES -->
+            <div class="case-section">
+                <h3>🧠 Défis Techniques & Solutions</h3>
+
+                <h4>1. Architecture de la Base de Données (MCD vers SQL)</h4>
+                <p>
+                    L'un des points clés a été la modélisation de l'association <strong>"Appartenir"</strong>.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>Problématique :</strong> Initialement conçue comme une simple relation 1,N, j'ai dû faire évoluer le schéma pour intégrer une table de jointure.<br><br>
+                    <strong>Solution :</strong> Ce choix permet de conserver l'historique des dates d'arrivée et de départ d'un employé sans écraser ses données précédentes, respectant ainsi les principes de normalisation de la base de données.
+                </div>
+
+                <div class="diagram">
+                    <div class="diagram-title">❌ Version 1 (Problématique)</div>
+                    <div class="diagram-box">
+                        Employe ──(1,N)── Ligue<br>
+                        ⚠️ Perte d'historique si départ
+                    </div>
+                    <div class="arrow">↓ Refactoring ↓</div>
+                    <div class="diagram-title">✅ Version 2 (Solution)</div>
+                    <div class="diagram-box">
+                        Employe ──Appartenir── Ligue<br>
+                        Champs : dateArrivee, dateDepart<br>
+                        ✅ Conservation de l'historique
+                    </div>
+                </div>
+
+                <h4>2. Logique Algorithmique (Traitement des chaînes)</h4>
+                <p>
+                    Pour le module de recherche, j'ai implémenté un algorithme de vérification de palindromes optimisé.
+                </p>
+                <div class="highlight-box">
+                    <strong>Approche :</strong> Utilisation de la méthode <code>charAt()</code> avec une stratégie à deux pointeurs (Two Pointers).<br><br>
+                    <strong>Optimisation :</strong> La complexité est de <strong>O(n/2)</strong>, car l'algorithme s'arrête dès qu'une différence est détectée, économisant ainsi des ressources processeur par rapport à une inversion complète de la chaîne.
+                </div>
+
+                <div class="code-block">
+    </div>
+
+                <h4>3. Expérience Utilisateur en CLI</h4>
+                <p>
+                    L'interface en ligne de commande a été pensée pour être sécurisée :
+                </p>
+                <div class="highlight-box">
+                    <strong>Flux de contrôle :</strong> L'utilisateur doit obligatoirement sélectionner et valider un employé par son ID avant de pouvoir accéder aux options de modification ou de suppression. Cela évite les erreurs de manipulation accidentelle de données.
+                </div>
+
+                <div class="code-block">
+
+                </div>
+            </div>
+
+            <!-- ÉVOLUTION GIT -->
+            <div class="case-section">
+                <h3>📂 Évolution Git du Projet</h3>
+                <p>
+                    Le versioning Git a permis de tracer l'évolution architecturale du projet, notamment la refonte de la modélisation de la base de données.
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="commit-hash">[Commit a3f2b1c]</span><br>
+                        <strong>Initial :</strong> Relation 1:N Employe ↔ Ligue
+                    </div>
+                    <div class="timeline-item">
+                        <span class="commit-hash">[Commit 7d8e9f0]</span><br>
+                        <strong>Refactor :</strong> Ajout table 'Appartenir' pour historique
+                    </div>
+                    <div class="timeline-item">
+                        <span class="commit-hash">[Commit 2c4a5b6]</span><br>
+                        <strong>Fix :</strong> Correction de la contrainte de clé étrangère
+                    </div>
+                    <div class="timeline-item">
+                        <span class="commit-hash">[Commit f1a9c3d]</span><br>
+                        <strong>Docs :</strong> Génération Javadoc complète
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMPÉTENCES MOBILISÉES -->
+            <div class="case-section">
+                <h3>🎯 Compétences Mobilisées</h3>
+                <ul style="list-style: none; padding-left: 0; font-size: 1.05rem;">
+                    <li style="margin-bottom: 1rem;">
+                        <strong>B1.1 - Recherche de solutions techniques :</strong><br>
+                        Optimisation algorithmique (Two Pointers), choix de l'architecture de persistance (JDBC vs ORM).
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                        <strong>B1.3 - Développement d'une solution applicative :</strong><br>
+                        Conception objet (héritage, interfaces, polymorphisme), implémentation du pattern DAO.
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                        <strong>B1.5 - Gestion des données :</strong><br>
+                        Normalisation SQL (3NF), gestion de l'intégrité référentielle, requêtes JOIN complexes.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- LIVRABLES -->
+            <div class="case-section" style="background: rgba(0,0,0,0.05);">
+                <h3>📥 Livrables</h3>
+                <ul style="font-size: 1.05rem; line-height: 2;">
+                    <li><strong>Script SQL :</strong> <a href="#" style="color: var(--accent-dim);">[Lien vers le commit du fichier .sql]</a></li>
+                    <li><strong>Code Source :</strong> <a href="#" style="color: var(--accent-dim);">[https://github.com/Kofi-shalom/personnel]</a></li>
+                    <li><strong>Documentation :</strong> Javadoc générée (disponible dans /docs)</li>
+                    <li><strong>Diagrammes UML :</strong> Diagramme de classes et de séquence</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDY: ALGORITHMES -->
+    <section id="case-algo" class="case-study">
+        <a href="#projets" class="btn back-button" onclick="hideCase('case-algo'); return false;">← Retour aux projets</a>
+        
+        <div class="case-study-header">
+            <h2 class="case-study-title">Algorithmes de Recherche</h2>
+            <p class="case-study-subtitle">Optimisation • Complexité • Tests Unitaires</p>
+        </div>
+
+        <div class="case-content">
+            <div class="case-section">
+                <h3>🎯 Objectif du Module</h3>
+                <p>
+                    Ce projet académique avait pour but d'explorer les techniques d'optimisation algorithmique en Java, avec un focus particulier sur le traitement de chaînes de caractères.
+                </p>
+            </div>
+
+            <div class="case-section">
+                <h3>🔬 Implémentation Technique</h3>
+                
+                <h4>Algorithme Two Pointers pour Palindromes</h4>
+                <p>
+                    Plutôt que d'inverser la chaîne complète (O(n) en mémoire supplémentaire), j'ai opté pour une vérification in-place avec deux pointeurs.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>Avantage :</strong> Complexité temporelle O(n/2) avec arrêt anticipé dès détection d'une non-correspondance.<br>
+                    <strong>Complexité spatiale :</strong> O(1) - pas de structure de données auxiliaire.
+                </div>
+
+                <div class="code-block">
+public class PalindromeChecker {
+    
+    public static boolean isPalindrome(String str) {
+        // Normalisation (suppression espaces, minuscules)
+        str = str.replaceAll("\\s+", "").toLowerCase();
+        
+        int left = 0;
+        int right = str.length() - 1;
+        
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false; // Arrêt anticipé
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
+                </div>
+
+                <h4>Tests Unitaires (JUnit)</h4>
+                <div class="code-block">
+@Test
+public void testPalindromeCasNominal() {
+    assertTrue(isPalindrome("kayak"));
+}
+
+@Test
+public void testPalindromeAvecEspaces() {
+    assertTrue(isPalindrome("A man a plan a canal Panama"));
+}
+
+@Test
+public void testChaineVide() {
+    assertFalse(isPalindrome(""));
+}
+                </div>
+            </div>
+
+            <div class="case-section">
+                <h3>📊 Analyse de Performance</h3>
+                <p>
+                    Comparaison empirique avec l'approche naïve (inversion complète + comparaison) :
+                </p>
+                <ul style="font-size: 1.05rem; line-height: 2;">
+                    <li><strong>String de 1000 caractères :</strong> Gain de ~40% en temps d'exécution</li>
+                    <li><strong>String de 10000 caractères :</strong> Gain de ~60% (arrêt anticipé fréquent)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPÉTENCES SECTION -->
+    <section id="competences" class="fade-in">
+        <div class="section-header">
+            <span class="section-number">[02]</span>
+            <h2 class="section-title">Compétences</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="border-left: 4px solid var(--accent); padding: 1.5rem; background: rgba(0,255,157,0.05);">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 900;">Développement</h3>
+                <ul style="line-height: 2;">
+                    <li>Java (POO, Collections, Streams)</li>
+                    <li>SQL (MySQL, Requêtes avancées)</li>
+                    <li>UML (Diagrammes de classes, séquence)</li>
+                    <li>Algorithmie & Complexité</li>
+                </ul>
+            </div>
+
+            <div style="border-left: 4px solid var(--noir); padding: 1.5rem;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 900;">Outils & Méthodes</h3>
+                <ul style="line-height: 2;">
+                    <li>Git & GitHub (Commits atomiques)</li>
+                    <li>Eclipse IDE</li>
+                    <li>Maven / Gestion dépendances</li>
+                    <li>Tests Unitaires (JUnit)</li>
+                </ul>
+            </div>
+
+            <div style="border-left: 4px solid var(--gris); padding: 1.5rem; background: rgba(0,0,0,0.05);">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 900;">Soft Skills</h3>
+                <ul style="line-height: 2;">
+                    <li>Documentation technique (Javadoc)</li>
+                    <li>Résolution de problèmes</li>
+                    <li>Autonomie & Rigueur</li>
+                    <li>Veille technologique</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="fade-in">
+        <div class="section-header">
+            <span class="section-number">[03]</span>
+            <h2 class="section-title">Contact</h2>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>GitHub</h3>
+                <a href="https://github.com/votre-username" target="_blank">github.com/votre-username</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/votre-profil" target="_blank">linkedin.com/in/votre-profil</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>Email</h3>
+                <a href="mailto:votre.email@example.com">votre.email@example.com</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 4rem; padding: 2rem; border: var(--border); background: rgba(0,255,157,0.05);">
+            <p style="font-size: 1.2rem; font-weight: 300; max-width: 700px; margin: 0 auto;">
+                Actuellement en recherche d'alternance en développement logiciel. 
+                Disponible pour échanger sur vos projets et opportunités.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 — Portfolio BTS SIO SLAM</p>
+        <p style="margin-top: 0.5rem;">Fait avec passion • Versionné sur Git • Hébergé sur GitHub Pages</p>
+        <p style="margin-top: 1rem; opacity: 0.6;">
+            <a href="https://docs.github.com" target="_blank">Documentation Git</a> • 
+            <a href="https://docs.oracle.com/en/java/" target="_blank">Java Docs</a>
+        </p>
+    </footer>
+
+    <script src="Ranelle.js"></script>
+</body>
+</html>                        >

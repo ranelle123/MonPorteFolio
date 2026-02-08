@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet M2L - Gestion Multi-Utilisateurs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Archivo:wght@300;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --noir: #0a0a0a;
+            --blanc: #fafafa;
+            --accent: #00ff9d;
+            --accent-dim: #00cc7e;
+            --gris: #888;
+            --gris-clair: #e0e0e0;
+            --border: 2px solid var(--noir);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Archivo', sans-serif;
+            background: var(--blanc);
+            color: var(--noir);
+            line-height: 1.7;
+        }
+
+        code, .mono {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(0,0,0,0.05);
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        /* HEADER */
+        .project-header {
+            background: var(--noir);
+            color: var(--blanc);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: 300;
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--accent);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+            color: var(--accent-dim);
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* INFO BOXES */
+        .info-box {
+            background: rgba(0, 255, 157, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .info-box.warning {
+            background: rgba(255, 200, 0, 0.1);
+            border-left-color: #ffc800;
+        }
+
+        .info-box strong {
+            color: var(--accent-dim);
+            font-size: 1.1rem;
+        }
+
+        /* TECH STACK */
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tech-item {
+            border: var(--border);
+            padding: 1.5rem;
+            text-align: center;
+            background: var(--blanc);
+        }
+
+        .tech-item strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* IMAGES */
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .screenshot {
+            border: var(--border);
+            background: var(--gris-clair);
+            padding: 1rem;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--gris);
+            font-style: italic;
+        }
+
+        .screenshot img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--gris);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* MCD DIAGRAM */
+        .mcd-container {
+            background: var(--blanc);
+            border: var(--border);
+            padding: 2rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        .mcd-diagram {
+            min-width: 600px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            white-space: pre;
+            line-height: 1.6;
+        }
+
+        /* ROLES TABLE */
+        .roles-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            border: var(--border);
+        }
+
+        .roles-table th {
+            background: var(--noir);
+            color: var(--accent);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .roles-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--gris-clair);
+        }
+
+        .roles-table tr:nth-child(even) {
+            background: rgba(0,0,0,0.02);
+        }
+
+        /* TIMELINE */
+        .timeline {
+            margin: 2rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid var(--gris-clair);
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .timeline-item strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* LINKS */
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .link-card {
+            border: var(--border);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            background: var(--blanc);
+            text-decoration: none;
+            color: var(--noir);
+            display: block;
+        }
+
+        .link-card:hover {
+            background: var(--noir);
+            color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .link-card h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+        }
+
+        .link-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* CODE BLOCKS */
+        .code-block {
+            background: var(--noir);
+            color: var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            border: var(--border);
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--noir);
+            color: var(--blanc);
+            padding: 2rem;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="project-header">
+        <a href="Ranelle.html" class="back-link">← Retour au portfolio</a>
+        <h1>Projet M2L</h1>
+        <p class="subtitle">Gestion Multi-Utilisateurs des Employés de Ligues Sportives</p>
+    </header>
+
+    <div class="container">
+        <!-- CONTEXTE -->
+        <section>
+            <h2>📋 Contexte du Projet</h2>
+            <p>
+                La Maison des Ligues de Lorraine (M2L) héberge plusieurs ligues sportives et souhaite moderniser 
+                la gestion de leurs employés. L'application initiale était mono-utilisateur et fonctionnait uniquement 
+                en ligne de commande avec sérialisation fichier.
+            </p>
+
+            <div class="info-box">
+                <strong>🎯 Mission :</strong> Transformer l'application pour supporter plusieurs utilisateurs simultanés 
+                avec différents niveaux de droits, tout en conservant l'architecture 3-tiers existante.
+            </div>
+        </section>
+
+        <!-- RESSOURCES FOURNIES -->
+        <section>
+            <h2>📦 Ressources Fournies vs. Travail Réalisé</h2>
+            
+            <h3>✅ Ce qui était fourni</h3>
+            <ul>
+                <li><strong>Code source initial :</strong> Classes <code>Employe</code>, <code>Ligue</code>, <code>GestionPersonnel</code> avec sérialisation fichier</li>
+                <li><strong>Architecture 3-tiers :</strong> Séparation présentation (commandLine) / métier (personnel) / données (passerelle)</li>
+                <li><strong>Bibliothèque CLI :</strong> Framework pour construire des menus en ligne de commande</li>
+                <li><strong>Système mono-utilisateur :</strong> Un seul utilisateur "root" pouvait gérer toutes les ligues</li>
+            </ul>
+
+            <h3>🛠️ Ce que j'ai développé</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>1. Ajout de la gestion des dates d'arrivée/départ</strong>
+                    <p>
+                        Implémentation de <code>LocalDate date_arrivee</code> et <code>date_depart</code> dans la classe 
+                        <code>Employe</code> avec validation (la date de départ ne peut pas être antérieure à l'arrivée).
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>2. Amélioration de l'interface CLI</strong>
+                    <p>
+                        Modification de <code>LigueConsole</code> pour permettre la saisie des dates lors de l'ajout d'un employé. 
+                        Ajout d'options de sélection et modification d'employés.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>3. Validation des données métier</strong>
+                    <p>
+                        Ajout de <code>IllegalArgumentException</code> pour empêcher la création d'employés avec des dates incohérentes 
+                        (départ avant arrivée, dates null).
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>4. Préparation pour multi-utilisateurs</strong>
+                    <p>
+                        Refactorisation du code pour préparer l'intégration future d'une base de données MySQL via 
+                        l'interface <code>Passerelle</code> (JDBC).
+                    </p>
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <strong>Java 17</strong>
+                    <p>Langage principal</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Eclipse IDE</strong>
+                    <p>Environnement de dev</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Serialization</strong>
+                    <p>Persistance actuelle</p>
+                </div>
+                <div class="tech-item">
+                    <strong>JDBC (prévu)</strong>
+                    <p>Migration future vers BDD</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NIVEAUX D'HABILITATION -->
+        <section>
+            <h2>🔐 Architecture cible</h2>
+            
+            <p>Le système doit supporter trois profils utilisateurs :</p>
+
+            <table class="roles-table">
+                <thead>
+                    <tr>
+                        <th>Rôle</th>
+                        <th>Droits</th>
+                        <th>Périmètre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Employé Simple</strong></td>
+                        <td>Lecture seule (consultation annuaire)</td>
+                        <td>Toutes les ligues</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Administrateur de Ligue</strong></td>
+                        <td>Lecture + Écriture (CRUD employés)</td>
+                        <td>Sa ligue uniquement</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Super-Administrateur (Root)</strong></td>
+                        <td>Accès total + Gestion des comptes admin</td>
+                        <td>Toutes les ligues</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <strong>💡 Implémentation actuelle :</strong> Le système gère déjà le concept de <code>root</code> 
+                (super-utilisateur) et d'<code>administrateur</code> de ligue. La vérification se fait via les méthodes 
+                <code>estRoot()</code> et <code>estAdmin(Ligue ligue)</code>.
+            </div>
+        </section>
+
+
+
+
+
+        <!-- EXTRAITS DE CODE -->
+        <section>
+            <h2>💻 Extraits de Code Significatifs</h2>
+            
+            <h3>1. Validation des Dates dans le Constructeur</h3>
+            <p>
+                J'ai ajouté une logique métier stricte pour empêcher la création d'employés avec des dates incohérentes :
+            </p>
+
+            <div class="code-block">// Employe.java (constructeur)
+Employe(GestionPersonnel gestionPersonnel, Ligue ligue, 
+        String nom, String prenom, String mail, String password, 
+        LocalDate date_arrivee, LocalDate date_depart)
+{
+    this.gestionPersonnel = gestionPersonnel;
+    this.nom = nom;
+    this.prenom = prenom;
+    this.password = password;
+    this.mail = mail;
+    this.ligue = ligue;
+    
+    // ✅ VALIDATION DES DATES (mon ajout)
+    if (date_arrivee == null || date_depart == null) {
+        throw new IllegalArgumentException(
+            "Les dates d'arrivée et de départ sont obligatoires");
+    }
+
+    if (date_depart.isBefore(date_arrivee)) {
+        throw new IllegalArgumentException(
+            "La date de départ ne peut pas être antérieure à la date d'arrivée");
+    }
+    
+    this.date_depart = date_depart;
+    this.date_arrivee = date_arrivee;
+}</div>
+
+            <h3>2. Gestion des Droits d'Administration</h3>
+            <p>
+                Le système vérifie qu'un employé peut devenir administrateur uniquement s'il appartient à la ligue 
+                ou s'il est le root :
+            </p>
+
+            <div class="code-block">// Ligue.java
+public void setAdministrateur(Employe administrateur)
+{
+    Employe root = gestionPersonnel.getRoot();
+    
+    // Seul le root ou un employé de la ligue peut être admin
+    if (administrateur != root && administrateur.getLigue() != this)
+        throw new DroitsInsuffisants();
+        
+    this.administrateur = administrateur;
+}</div>
+
+            <h3>3. Vérification du Statut (Root / Admin / Employé)</h3>
+            <p>
+                Deux méthodes clés permettent de distinguer les profils utilisateurs :
+            </p>
+
+            <div class="code-block">// Employe.java
+
+// Vérifie si l'employé est le super-utilisateur
+public boolean estRoot()
+{
+    return gestionPersonnel.getRoot() == this;
+}
+
+// Vérifie si l'employé est admin d'une ligue donnée
+public boolean estAdmin(Ligue ligue)
+{
+    return ligue.getAdministrateur() == this;
+}</div>
+
+            <h3>4. Ajout d'un Employé avec Dates (Interface CLI)</h3>
+            <p>
+                Modification de <code>LigueConsole.java</code> pour permettre la saisie des dates :
+            </p>
+
+            <div class="code-block">// LigueConsole.java
+private Option ajouterEmploye(final Ligue ligue)
+{
+    return new Option("ajouter un employé", "a", () ->
+    {
+        String nom = getString("nom : ");
+        String prenom = getString("prenom : ");
+        String mail = getString("mail : ");
+        String password = getString("password : ");
+
+        // ✅ SAISIE DES DATES (mon ajout)
+        LocalDate dateArrivee = LocalDate.parse(
+            getString("date d'arrivée (yyyy-MM-dd) : ")
+        );
+
+        LocalDate dateDepart = LocalDate.parse(
+            getString("date de départ (yyyy-MM-dd) : ")
+        );
+
+        ligue.addEmploye(nom, prenom, mail, password, 
+                         dateArrivee, dateDepart);
+    });
+}</div>
+
+            <h3>5. Suppression Sécurisée d'un Employé</h3>
+            <p>
+                Si l'employé supprimé est administrateur, le root récupère automatiquement ses droits :
+            </p>
+
+            <div class="code-block">// Employe.java
+public void remove()
+{
+    Employe root = gestionPersonnel.getRoot();
+    
+    if (this != root)
+    {
+        // Si cet employé est admin, le root reprend les droits
+        if (estAdmin(getLigue()))
+            getLigue().setAdministrateur(root);
+            
+        getLigue().remove(this);
+    }
+    else
+        throw new ImpossibleDeSupprimerRoot();
+}</div>
+        </section>
+
+        <!-- CAPTURES D'ÉCRAN -->
+        <section>
+            <h2>📸 Captures d'Écran de l'Application</h2>
+            
+            <h3>Abre heuristique</h3>
+            <div class="screenshot-grid">
+                <div>
+                    <img src="images/AbreHeureustique.png" alt="Abre heuristique">
+                    <p class="caption">Menu principal accessible au super-utilisateur (root)</p>
+                </div>
+            </div>
+
+            <h3>MCD 1</h3>
+            <div class="screenshot-grid">
+                <div>
+                    <img src="images/MCD1.png" alt="MCD 1">
+                    <p class="caption">Options de gestion d'une ligue</p>
+                </div>
+            </div>
+
+            <h3>MCD 2 </h3>
+            <div class="screenshot-grid">
+                <div>
+                    <img src="images/MCD2.png" alt="MCD 2">
+                    <p class="caption">Formulaire d'ajout d'un employé avec validation des dates</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIFFICULTÉS RENCONTRÉES -->
+        <section>
+            <h2>⚠️ Difficultés Rencontrées & Solutions</h2>
+            
+            <h3>1. Gestion des Dates avec LocalDate</h3>
+            <div class="info-box">
+                <strong>Problème :</strong> Au départ, je ne savais pas comment valider qu'une date de départ soit postérieure 
+                à la date d'arrivée.<br><br>
+                <strong>Solution :</strong> J'ai découvert la méthode <code>isBefore()</code> de <code>LocalDate</code> qui permet 
+                de comparer deux dates facilement. J'ai placé cette validation dans le constructeur ET dans les setters pour garantir 
+                la cohérence des données.
+            </div>
+
+            <h3>2. Respect de l'Architecture 3-Tiers</h3>
+            <div class="info-box">
+                <strong>Problème :</strong> Au début, j'étais tenté d'accéder directement aux attributs des employés depuis 
+                <code>LigueConsole</code> pour aller plus vite.<br><br>
+                <strong>Solution :</strong> J'ai compris l'importance de passer par les méthodes métier (getters/setters) pour 
+                respecter l'encapsulation. Cela facilitera la migration vers JDBC car seule la couche Données changera.
+            </div>
+
+            <h3>3. Compréhension du Pattern Passerelle</h3>
+            <div class="info-box">
+                <strong>Problème :</strong> Je ne comprenais pas à quoi servait l'interface <code>Passerelle</code> et pourquoi 
+                le code avait <code>Serialization.java</code> ET <code>JDBC.java</code>.<br><br>
+                <strong>Solution :</strong> J'ai réalisé que c'est un design pattern qui permet de changer de système de persistance 
+                (fichier → BDD) sans modifier le code métier. La constante <code>TYPE_PASSERELLE</code> dans <code>GestionPersonnel</code> 
+                permet de basculer entre les deux.
+            </div>
+
+            <h3>4. Exception lors de la Suppression du Root</h3>
+            <div class="info-box">
+                <strong>Problème :</strong> Le code lève une exception <code>ImpossibleDeSupprimerRoot</code> mais je ne savais pas 
+                où la gérer dans l'interface CLI.<br><br>
+                <strong>Solution :</strong> J'ai laissé l'exception se propager jusqu'au niveau présentation. Dans une version future, 
+                il faudrait ajouter un <code>try-catch</code> pour afficher un message utilisateur convivial.
+            </div>
+        </section>
+
+        <!-- COMPÉTENCES -->
+        <section>
+            <h2>🎯 Compétences Mobilisées (Référentiel BTS SIO)</h2>
+            
+            <ul>
+                <li>
+                    <strong>B1.1 - Recherche de solutions techniques :</strong><br>
+                    Recherche sur l'API <code>LocalDate</code> (méthodes <code>parse()</code>, <code>isBefore()</code>). 
+                    Compréhension du pattern Passerelle pour l'abstraction de la persistance.
+                </li>
+                <li>
+                    <strong>B1.2 - Développement d'une solution applicative :</strong><br>
+                    Modification de classes existantes (<code>Employe</code>, <code>LigueConsole</code>) en respectant 
+                    les conventions de nommage et la Javadoc. Utilisation de <code>IllegalArgumentException</code> pour 
+                    la validation métier.
+                </li>
+                <li>
+                    <strong>B1.3 - Conception et adaptation de structures de données :</strong><br>
+                    Ajout d'attributs (<code>date_arrivee</code>, <code>date_depart</code>) avec préservation de la 
+                    sérialisation (<code>serialVersionUID</code>). Utilisation de <code>SortedSet</code> pour le tri automatique.
+                </li>
+                <li>
+                    <strong>B1.4 - Programmation objet :</strong><br>
+                    Respect de l'encapsulation (attributs privés, accès via getters/setters). Implémentation de 
+                    <code>Comparable&lt;Employe&gt;</code> pour le tri. Compréhension du pattern Singleton 
+                    (<code>GestionPersonnel</code>).
+                </li>
+                <li>
+                    <strong>B1.5 - Gestion des données :</strong><br>
+                    Préparation du passage à une base de données relationnelle via l'interface <code>Passerelle</code>. 
+                    Compréhension de la contrainte CHECK SQL pour valider les dates.
+                </li>
+            </ul>
+        </section>
+
+        <!-- ÉVOLUTIONS FUTURES -->
+        <section>
+            <h2>🚀 Évolutions Futures Prévues</h2>
+            
+            <ol>
+                <li>
+                    <strong>Migration vers MySQL :</strong><br>
+                    Implémentation complète de <code>JDBC.java</code> avec requêtes préparées (<code>PreparedStatement</code>) 
+                    pour éviter les injections SQL.
+                </li>
+                <li>
+                    <strong>Hashage des mots de passe :</strong><br>
+                    Actuellement, les passwords sont stockés en clair. Il faut utiliser <code>BCrypt</code> ou 
+                    <code>PBKDF2</code> pour les hasher avant stockage.
+                </li>
+                <li>
+                    <strong>Interface graphique (Swing) :</strong><br>
+                    Création d'une GUI pour remplacer l'interface CLI, plus intuitive pour les administrateurs de ligue.
+                </li>
+                <li>
+                    <strong>Tests unitaires (JUnit) :</strong><br>
+                    Ajouter des tests pour valider la logique de validation des dates et les droits d'administration.
+                </li>
+                <li>
+                    <strong>Gestion de l'historique :</strong><br>
+                    Actuellement, on peut modifier les dates d'un employé. Il faudrait créer une table 
+                    <code>Historique_Affectation</code> pour tracer tous les changements.
+                </li>
+            </ol>
+        </section>
+
+        <!-- LIENS -->
+        <section>
+            <h2>🔗 Ressources & Liens</h2>
+            
+            <div class="link-grid">
+                <a href="#" class="link-card" onclick="alert('Remplacez par votre lien GitHub du projet M2L'); return false;">
+                    <h4>📂 Code Source</h4>
+                    <p>github.com/votre-username/m2l</p>
+                </a>
+
+                <a href="#" class="link-card" onclick="alert('Remplacez par le lien de la Javadoc générée'); return false;">
+                    <h4>📖 Javadoc</h4>
+                    <p>Documentation technique complète</p>
+                </a>
+
+                <a href="#" class="link-card" onclick="alert('Lien vers le dépôt du code initial fourni'); return false;">
+                    <h4>🎓 Ressources Initiales</h4>
+                    <p>Code source fourni par le formateur</p>
+                </a>
+
+                <a href="portfolio.html" class="link-card">
+                    <h4>← Portfolio</h4>
+                    <p>Retour au portfolio principal</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- CONCLUSION -->
+        <section>
+            <h2>✅ Bilan & Apprentissages</h2>
+            
+            <p>
+                Ce projet m'a permis de travailler sur du <strong>code existant</strong>, une compétence essentielle 
+                en entreprise. Plutôt que de repartir de zéro, j'ai dû :
+            </p>
+
+            <ul>
+                <li><strong>Comprendre l'architecture existante</strong> avant de modifier le code</li>
+                <li><strong>Respecter les conventions</strong> déjà en place (nommage, Javadoc, structure des packages)</li>
+                <li><strong>Anticiper les évolutions futures</strong> (migration vers BDD) en gardant le code flexible</li>
+                <li><strong>Valider les données métier</strong> dès la couche objet pour garantir la cohérence</li>
+            </ul>
+
+            <div class="info-box">
+                <strong>🎯 Compétence clé acquise :</strong> J'ai compris qu'en POO, la validation des données ne doit 
+                PAS se faire uniquement dans l'interface utilisateur, mais <strong>dans les classes métier</strong> 
+                (constructeurs, setters). Cela garantit que les données restent cohérentes même si on change d'interface 
+                (CLI → GUI → API REST).
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 1.1rem;">
+                <strong>Durée du projet :</strong> 2mois et 2 semaines<br>
+                <strong>Lignes de code ajoutées/modifiées :</strong> ~150 lignes<br>
+                <strong>Fichiers modifiés :</strong> <code>Employe.java</code>, <code>LigueConsole.java</code>, <code>Ligue.java</code>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 — Projet M2L • BTS SIO SLAM</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="Ranelle.html">Retour au portfolio</a>
+        </p>
+    </footer>
+</body>
+</html>
