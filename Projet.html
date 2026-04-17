@@ -359,7 +359,7 @@
     <div class="container">
         <!-- CONTEXTE -->
         <section>
-            <h2>📋 Contexte du Projet</h2>
+            <h2> Contexte du Projet</h2>
             <p>
                 La Maison des Ligues de Lorraine (M2L) héberge plusieurs ligues sportives et souhaite moderniser 
                 la gestion de leurs employés. L'application initiale était mono-utilisateur et fonctionnait uniquement 
@@ -367,16 +367,16 @@
             </p>
 
             <div class="info-box">
-                <strong>🎯 Mission :</strong> Transformer l'application pour supporter plusieurs utilisateurs simultanés 
+                <strong> Mission :</strong> Transformer l'application pour supporter plusieurs utilisateurs simultanés 
                 avec différents niveaux de droits, tout en conservant l'architecture 3-tiers existante.
             </div>
         </section>
 
         <!-- RESSOURCES FOURNIES -->
         <section>
-            <h2>📦 Ressources Fournies vs. Travail Réalisé</h2>
+            <h2> Ressources Fournies vs. Travail Réalisé</h2>
             
-            <h3>✅ Ce qui était fourni</h3>
+            <h3> Ce qui était fourni</h3>
             <ul>
                 <li><strong>Code source initial :</strong> Classes <code>Employe</code>, <code>Ligue</code>, <code>GestionPersonnel</code> avec sérialisation fichier</li>
                 <li><strong>Architecture 3-tiers :</strong> Séparation présentation (commandLine) / métier (personnel) / données (passerelle)</li>
@@ -384,7 +384,7 @@
                 <li><strong>Système mono-utilisateur :</strong> Un seul utilisateur "root" pouvait gérer toutes les ligues</li>
             </ul>
 
-            <h3>🛠️ Ce que j'ai développé</h3>
+            <h3> Ce que j'ai développé</h3>
             <div class="timeline">
                 <div class="timeline-item">
                     <strong>1. Ajout de la gestion des dates d'arrivée/départ</strong>
@@ -441,7 +441,7 @@
 
         <!-- NIVEAUX D'HABILITATION -->
         <section>
-            <h2>🔐 Architecture cible</h2>
+            <h2> Architecture cible</h2>
             
             <p>Le système doit supporter trois profils utilisateurs :</p>
 
@@ -473,7 +473,7 @@
             </table>
 
             <div class="info-box">
-                <strong>💡 Implémentation actuelle :</strong> Le système gère déjà le concept de <code>root</code> 
+                <strong> Implémentation actuelle :</strong> Le système gère déjà le concept de <code>root</code> 
                 (super-utilisateur) et d'<code>administrateur</code> de ligue. La vérification se fait via les méthodes 
                 <code>estRoot()</code> et <code>estAdmin(Ligue ligue)</code>.
             </div>
@@ -485,7 +485,7 @@
 
         <!-- EXTRAITS DE CODE -->
         <section>
-            <h2>💻 Extraits de Code Significatifs</h2>
+            <h2> Extraits de Code Significatifs</h2>
             
             <h3>1. Validation des Dates dans le Constructeur</h3>
             <p>
@@ -748,17 +748,17 @@ public void remove()
             
             <div class="link-grid">
                 <a href="#" class="link-card" onclick="alert('Remplacez par votre lien GitHub du projet M2L'); return false;">
-                    <h4>📂 Code Source</h4>
+                    <h4> Code Source</h4>
                     <p>github.com/votre-username/m2l</p>
                 </a>
 
                 <a href="#" class="link-card" onclick="alert('Remplacez par le lien de la Javadoc générée'); return false;">
-                    <h4>📖 Javadoc</h4>
+                    <h4>Javadoc</h4>
                     <p>Documentation technique complète</p>
                 </a>
 
                 <a href="#" class="link-card" onclick="alert('Lien vers le dépôt du code initial fourni'); return false;">
-                    <h4>🎓 Ressources Initiales</h4>
+                    <h4> Ressources Initiales</h4>
                     <p>Code source fourni par le formateur</p>
                 </a>
 
@@ -771,7 +771,7 @@ public void remove()
 
         <!-- CONCLUSION -->
         <section>
-            <h2>✅ Bilan & Apprentissages</h2>
+            <h2> Bilan & Apprentissages</h2>
             
             <p>
                 Ce projet m'a permis de travailler sur du <strong>code existant</strong>, une compétence essentielle 
@@ -786,7 +786,7 @@ public void remove()
             </ul>
 
             <div class="info-box">
-                <strong>🎯 Compétence clé acquise :</strong> J'ai compris qu'en POO, la validation des données ne doit 
+                <strong>Compétence clé acquise :</strong> J'ai compris qu'en POO, la validation des données ne doit 
                 PAS se faire uniquement dans l'interface utilisateur, mais <strong>dans les classes métier</strong> 
                 (constructeurs, setters). Cela garantit que les données restent cohérentes même si on change d'interface 
                 (CLI → GUI → API REST).

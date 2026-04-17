@@ -36,7 +36,11 @@
     <!-- NAVIGATION -->
     <nav id="main-nav">
         <ul>
+            <li><a href="#cv">CV</a></li>
             <li><a href="#projets">Projets</a></li>
+            <li><a href="#stages">Stages</a></li>
+            <li><a href="#synthese">Synthèse</a></li>
+            <li><a href="#veille">Veille</a></li>
             <li><a href="#competences">Compétences</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -45,7 +49,7 @@
     <!-- PROJETS SECTION -->
     <section id="projets" class="fade-in">
         <div class="section-header">
-            <span class="section-number">[01]</span>
+            <span class="section-number">[02]</span>
             <h2 class="section-title">Projets</h2>
         </div>
 
@@ -53,7 +57,7 @@
             <!-- PROJET 1: Gestion Ligue Sportive -->
             <article class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">🏀 Gestion Ligue Sportive</h3>
+                    <h3 class="project-title"> Gestion Ligue Sportive</h3>
                     <p class="project-competences">B1.1 • B1.3 • B1.5</p>
                 </div>
                 <div class="project-body">
@@ -67,7 +71,7 @@
                         <span class="tech-tag">MCD/MLD</span>
                     </div>
                     <div class="project-actions">
-                        <a href="#case-ligue" class="btn btn-primary" onclick="showCase('case-ligue'); return false;">Case Study</a>
+                        <a href="#case-ligue" class="btn btn-primary" onclick="showCase('case-ligue'); return false;">Voir plus</a>
                         <a href="#" class="btn" onclick="alert('Lien GitHub: [À remplacer par votre URL]'); return false;">GitHub →</a>
                     </div>
                 </div>
@@ -89,7 +93,7 @@
                         <span class="tech-tag">Complexité</span>
                     </div>
                     <div class="project-actions">
-                        <a href="#case-algo" class="btn btn-primary" onclick="showCase('case-algo'); return false;">Case Study</a>
+                        <a href="#case-algo" class="btn btn-primary" onclick="showCase('case-algo'); return false;">Voir plus</a>
                         <a href="#" class="btn" onclick="alert('Lien GitHub: [À remplacer mon votre URL]'); return false;">GitHub →</a>
                     </div>
                 </div>
@@ -98,7 +102,7 @@
             <!-- PROJET 3: À PERSONNALISER -->
             <article class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">📊 Projet Atelier Pro</h3>
+                    <h3 class="project-title">Projet Atelier Pro</h3>
                     <p class="project-competences">B1.X • B1.X</p>
                 </div>
                 <div class="project-body">
@@ -118,6 +122,246 @@
         </div>
     </section>
 
+    <!-- CV SECTION -->
+    <section id="cv" class="fade-in">
+        <div class="section-header">
+            <span class="section-number">[01]</span>
+            <h2 class="section-title">CV</h2>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                Étudiante en BTS SIO option SLAM, spécialisée en développement Java et gestion de bases de données.
+            </p>
+
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="images/cv.jpg" alt="CV de Ranelle Mampouya" style="max-width: 100%; height: auto; border: 2px solid var(--noir); border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Formation</h3>
+                    <ul style="line-height: 1.8;">
+                        <li><strong>BTS SIO SLAM</strong> - 2024-2026</li>
+                        <li><strong>Bac Général</strong> - 2023</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Technologies</h3>
+                    <div class="stack-badges" style="justify-content: flex-start;">
+                        <span class="badge">Java</span>
+                        <span class="badge">MySQL</span>
+                        <span class="badge">Git</span>
+                        <span class="badge">UML</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="#" class="btn btn-primary" onclick="alert('Télécharger CV.pdf'); return false;">Télécharger CV (PDF)</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gris);">
+                    Ressources : <a href="https://www.linkedin.com/in/ranelle-mampouya-819a5225b/" target="_blank">LinkedIn</a> | 
+                    <a href="https://github.com/ranelle123" target="_blank">GitHub</a> | 
+                    <a href="https://docs.oracle.com/en/java/javase/17/docs/api/" target="_blank">Java Docs</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STAGES SECTION -->
+    <section id="stages" class="fade-in">
+        <div class="section-header">
+            <span class="section-number">[03]</span>
+            <h2 class="section-title">Stages</h2>
+        </div>
+
+        <div class="projects-grid">
+            <article class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Stage Développement Web</h3>
+                    <p class="project-competences">2025 - Entreprise X</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Développement d'une application web en Java/Spring Boot avec base de données MySQL.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary" onclick="alert('Rapport de stage disponible'); return false;">Rapport</a>
+                        <a href="#" class="btn" onclick="alert('Code source sur GitHub'); return false;">Code →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Stage Analyse de Données</h3>
+                    <p class="project-competences">2024 - Entreprise Y</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Analyse et visualisation de données avec Python et SQL.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary" onclick="alert('Rapport disponible'); return false;">Rapport</a>
+                        <a href="#" class="btn" onclick="alert('Notebooks Jupyter'); return false;">Notebooks →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <p style="font-size: 0.9rem; color: var(--gris);">
+                Ressources : <a href="https://github.com/ranelle123/stages" target="_blank">Dépôt GitHub Stages</a> | 
+                <a href="https://docs.python.org/3/" target="_blank">Python Docs</a> | 
+                <a href="https://pandas.pydata.org/docs/" target="_blank">Pandas Docs</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- TABLEAU DE SYNTHESE SECTION -->
+    <section id="synthese" class="fade-in">
+        <div class="section-header">
+            <span class="section-number">[04]</span>
+            <h2 class="section-title">Tableau de Synthèse</h2>
+        </div>
+
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+                <thead>
+                    <tr style="background: var(--noir); color: var(--blanc);">
+                        <th style="padding: 1rem; text-align: left;">Compétence</th>
+                        <th style="padding: 1rem; text-align: left;">Niveau</th>
+                        <th style="padding: 1rem; text-align: left;">Projets</th>
+                        <th style="padding: 1rem; text-align: left;">Ressources</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--gris-clair);">
+                        <td style="padding: 1rem;"><strong>Java POO</strong></td>
+                        <td style="padding: 1rem;">Avancé</td>
+                        <td style="padding: 1rem;">Gestion Ligue, Algorithmes</td>
+                        <td style="padding: 1rem;"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/" target="_blank">API Java</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--gris-clair); background: rgba(0,0,0,0.02);">
+                        <td style="padding: 1rem;"><strong>SQL/MySQL</strong></td>
+                        <td style="padding: 1rem;">Intermédiaire</td>
+                        <td style="padding: 1rem;">Gestion Ligue</td>
+                        <td style="padding: 1rem;"><a href="https://dev.mysql.com/doc/" target="_blank">MySQL Docs</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--gris-clair);">
+                        <td style="padding: 1rem;"><strong>Git/Versioning</strong></td>
+                        <td style="padding: 1rem;">Avancé</td>
+                        <td style="padding: 1rem;">Tous projets</td>
+                        <td style="padding: 1rem;"><a href="https://git-scm.com/doc" target="_blank">Git Docs</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--gris-clair); background: rgba(0,0,0,0.02);">
+                        <td style="padding: 1rem;"><strong>UML</strong></td>
+                        <td style="padding: 1rem;">Intermédiaire</td>
+                        <td style="padding: 1rem;">Gestion Ligue</td>
+                        <td style="padding: 1rem;"><a href="https://www.uml.org/" target="_blank">UML Standard</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <p style="font-size: 0.9rem; color: var(--gris);">
+                Ressources supplémentaires : <a href="https://github.com/ranelle123/portfolio" target="_blank">Code du Portfolio</a> | 
+                <a href="https://www.eclipse.org/documentation/" target="_blank">Eclipse Docs</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- VEILLE SECTION -->
+    <section id="veille" class="fade-in">
+        <div class="section-header">
+            <span class="section-number">[05]</span>
+            <h2 class="section-title">Veille Technologique</h2>
+        </div>
+
+        <div class="projects-grid">
+            <article class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Java 21 Features</h3>
+                    <p class="project-competences">Décembre 2024</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Exploration des nouvelles fonctionnalités de Java 21 : records patterns, string templates, etc.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java 21</span>
+                        <span class="tech-tag">Nouveautés</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary" onclick="alert('Article complet'); return false;">Lire</a>
+                        <a href="https://openjdk.org/projects/jdk/21/" target="_blank" class="btn">Source →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Spring Boot 3.0</h3>
+                    <p class="project-competences">Novembre 2024</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Migration vers Spring Boot 3.0 : changements majeurs et bonnes pratiques.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">Migration</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary" onclick="alert('Guide de migration'); return false;">Guide</a>
+                        <a href="https://spring.io/projects/spring-boot" target="_blank" class="btn">Site →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Sécurité SQL Injection</h3>
+                    <p class="project-competences">Octobre 2024</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Prévention des injections SQL : PreparedStatement vs concaténation.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Sécurité</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">JDBC</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary" onclick="alert('Tutoriel sécurité'); return false;">Tutoriel</a>
+                        <a href="https://owasp.org/www-community/attacks/SQL_Injection" target="_blank" class="btn">OWASP →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <p style="font-size: 0.9rem; color: var(--gris);">
+                Ressources : <a href="https://github.com/ranelle123/veille-tech" target="_blank">Dépôt Veille</a> | 
+                <a href="https://dev.to/" target="_blank">Dev.to</a> | 
+                <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a> | 
+                <a href="https://medium.com/" target="_blank">Medium</a>
+            </p>
+        </div>
+    </section>
+
     <!-- CASE STUDY: LIGUE SPORTIVE -->
     <section id="case-ligue" class="case-study">
         <a href="#projets" class="btn back-button" onclick="hideCase('case-ligue'); return false;">← Retour aux projets</a>
@@ -130,12 +374,12 @@
         <div class="case-content">
             <!-- PRÉSENTATION -->
             <div class="case-section">
-                <h3>📌 Présentation du Projet</h3>
+                <h3> Présentation du Projet</h3>
                 <p>
                     Réalisé sous Eclipse, ce projet a pour but de gérer le cycle de vie des employés au sein de différentes ligues sportives. L'enjeu était de créer une application robuste capable de gérer à la fois une logique métier complexe en Java et une persistance de données cohérente en SQL.
                 </p>
 
-                <h4>🛠️ Stack Technique</h4>
+                <h4> Stack Technique</h4>
                 <ul style="list-style: none; padding-left: 0;">
                     <li><strong>Langage :</strong> Java (JDK 17+)</li>
                     <li><strong>IDE :</strong> Eclipse IDE</li>
@@ -146,7 +390,7 @@
 
             <!-- DÉFIS TECHNIQUES -->
             <div class="case-section">
-                <h3>🧠 Défis Techniques & Solutions</h3>
+                <h3> Défis Techniques & Solutions</h3>
 
                 <h4>1. Architecture de la Base de Données (MCD vers SQL)</h4>
                 <p>
@@ -159,22 +403,22 @@
                 </div>
 
                 <div class="diagram">
-                    <div class="diagram-title">❌ Version 1 (Problématique)</div>
+                    <div class="diagram-title"> Version 1 (Problématique)</div>
                     <div class="diagram-box">
                         Employe ──(1,N)── Ligue<br>
-                        ⚠️ Perte d'historique si départ
+                         Perte d'historique si départ
                     </div>
                     <div class="arrow">↓ Refactoring ↓</div>
-                    <div class="diagram-title">✅ Version 2 (Solution)</div>
+                    <div class="diagram-title"> Version 2 (Solution)</div>
                     <div class="diagram-box">
                         Employe ──Appartenir── Ligue<br>
                         Champs : dateArrivee, dateDepart<br>
-                        ✅ Conservation de l'historique
+                         Conservation de l'historique
                     </div>
                 </div>
 
                 <h4>2. Logique Algorithmique (Traitement des chaînes)</h4>
-                <p>
+                <p> 
                     Pour le module de recherche, j'ai implémenté un algorithme de vérification de palindromes optimisé.
                 </p>
                 <div class="highlight-box">
@@ -200,7 +444,7 @@
 
             <!-- ÉVOLUTION GIT -->
             <div class="case-section">
-                <h3>📂 Évolution Git du Projet</h3>
+                <h3> Évolution Git du Projet</h3>
                 <p>
                     Le versioning Git a permis de tracer l'évolution architecturale du projet, notamment la refonte de la modélisation de la base de données.
                 </p>
@@ -227,7 +471,7 @@
 
             <!-- COMPÉTENCES MOBILISÉES -->
             <div class="case-section">
-                <h3>🎯 Compétences Mobilisées</h3>
+                <h3> Compétences Mobilisées</h3>
                 <ul style="list-style: none; padding-left: 0; font-size: 1.05rem;">
                     <li style="margin-bottom: 1rem;">
                         <strong>B1.1 - Recherche de solutions techniques :</strong><br>
@@ -246,7 +490,7 @@
 
             <!-- LIVRABLES -->
             <div class="case-section" style="background: rgba(0,0,0,0.05);">
-                <h3>📥 Livrables</h3>
+                <h3>Livrables</h3>
                 <ul style="font-size: 1.05rem; line-height: 2;">
                     <li><strong>Script SQL :</strong> <a href="#" style="color: var(--accent-dim);">[Lien vers le commit du fichier .sql]</a></li>
                     <li><strong>Code Source :</strong> <a href="#" style="color: var(--accent-dim);">[https://github.com/Kofi-shalom/personnel]</a></li>
@@ -268,14 +512,14 @@
 
         <div class="case-content">
             <div class="case-section">
-                <h3>🎯 Objectif du Module</h3>
+                <h3> Objectif du Module</h3>
                 <p>
                     Ce projet académique avait pour but d'explorer les techniques d'optimisation algorithmique en Java, avec un focus particulier sur le traitement de chaînes de caractères.
                 </p>
             </div>
 
             <div class="case-section">
-                <h3>🔬 Implémentation Technique</h3>
+                <h3> Implémentation Technique</h3>
                 
                 <h4>Algorithme Two Pointers pour Palindromes</h4>
                 <p>
@@ -329,7 +573,7 @@ public void testChaineVide() {
             </div>
 
             <div class="case-section">
-                <h3>📊 Analyse de Performance</h3>
+                <h3>Analyse de Performance</h3>
                 <p>
                     Comparaison empirique avec l'approche naïve (inversion complète + comparaison) :
                 </p>
@@ -344,7 +588,7 @@ public void testChaineVide() {
     <!-- COMPÉTENCES SECTION -->
     <section id="competences" class="fade-in">
         <div class="section-header">
-            <span class="section-number">[02]</span>
+            <span class="section-number">[06]</span>
             <h2 class="section-title">Compétences</h2>
         </div>
 
@@ -384,24 +628,24 @@ public void testChaineVide() {
     <!-- CONTACT SECTION -->
     <section id="contact" class="fade-in">
         <div class="section-header">
-            <span class="section-number">[03]</span>
+            <span class="section-number">[07]</span>
             <h2 class="section-title">Contact</h2>
         </div>
 
         <div class="contact-grid">
             <div class="contact-card">
                 <h3>GitHub</h3>
-                <a href="https://github.com/votre-username" target="_blank">github.com/votre-username</a>
+                <a href="https://github.com/ranelle123" target="_blank">github.com/ranelle123</a>
             </div>
 
             <div class="contact-card">
                 <h3>LinkedIn</h3>
-                <a href="https://linkedin.com/in/votre-profil" target="_blank">linkedin.com/in/votre-profil</a>
+                <a href="https://www.linkedin.com/in/ranelle-mampouya-819a5225b/" target="_blank">linkedin.com/in/ranelle-mampouya-819a5225b</a>
             </div>
 
             <div class="contact-card">
                 <h3>Email</h3>
-                <a href="mailto:votre.email@example.com">votre.email@example.com</a>
+                <a href="mampouyaranelle@icloud.com">mampouyaranelle@icloud.com</a>
             </div>
         </div>
 
@@ -413,9 +657,9 @@ public void testChaineVide() {
         </div>
     </section>
 
-    <!-- FOOTER -->
+   
     <footer>
-        <p>© 2026 — Portfolio BTS SIO SLAM</p>
+        <p>© 2026 — Portfolio BTS SIO SLAM by Ranelle Mampouya</p>
         <p style="margin-top: 0.5rem;">Fait avec passion • Versionné sur Git • Hébergé sur GitHub Pages</p>
         <p style="margin-top: 1rem; opacity: 0.6;">
             <a href="https://docs.github.com" target="_blank">Documentation Git</a> • 
@@ -425,4 +669,4 @@ public void testChaineVide() {
 
     <script src="Ranelle.js"></script>
 </body>
-</html>                        >
+</html>
