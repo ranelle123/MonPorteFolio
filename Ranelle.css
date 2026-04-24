@@ -35,18 +35,11 @@ code, .mono {
 	justify-content: center;
 	padding: 2rem;
 	position: relative;
-	background: 
-		repeating-linear-gradient(
-			0deg,
-			transparent,
-			transparent 2px,
-			var(--gris-clair) 2px,
-			var(--gris-clair) 3px
-		);
+	background: var(--blanc);
 }
 
 .hero::before {
-	content: 'PORTFOLIO.DEV';
+	content: 'RANELLE MAMPOUYA';
 	position: absolute;
 	top: 2rem;
 	left: 2rem;
