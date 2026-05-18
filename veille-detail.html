@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique - Sécurisation et optimisation des bases de données en entreprise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Archivo:wght@300;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Ranelle.css">
+</head>
+<body>
+    <header class="project-header">
+        <a href="index.html" class="back-link">← Retour au portfolio</a>
+        <h1>Sécurisation et optimisation des bases de données en entreprise</h1>
+        <p class="subtitle">Veille Technologique • BTS SIO SLAM E5</p>
+    </header>
+
+    <div class="container">
+        <!-- INTRODUCTION -->
+        <section>
+            <h2>Introduction</h2>
+            <p>
+                Dans un contexte professionnel où les données constituent l'actif le plus précieux d'une entreprise, la sécurisation et l'optimisation des bases de données deviennent des enjeux critiques. Cette veille technologique explore les stratégies essentielles pour protéger les données sensibles tout en assurant des performances optimales, en conformité avec les réglementations actuelles comme le RGPD.
+            </p>
+            <div class="info-box">
+                <strong>Objectif :</strong> Fournir une analyse complète des meilleures pratiques en matière de sécurité et d'optimisation des bases de données relationnelles (MySQL, PostgreSQL, Oracle) et NoSQL en environnement d'entreprise.
+            </div>
+        </section>
+
+        <!-- SÉCURISATION -->
+        <section>
+            <h2>Sécurisation des bases de données</h2>
+            <p>
+                La sécurisation des bases de données repose sur une approche multicouche (defense in depth) combinant prévention, détection et réponse aux menaces.
+            </p>
+
+            <h3>1. Authentification et autorisation</h3>
+            <ul>
+                <li><strong>Authentification forte :</strong> Utilisation de mots de passe complexes, authentification multi-facteurs (MFA), et gestion des sessions sécurisées</li>
+                <li><strong>Contrôle d'accès basé sur les rôles (RBAC) :</strong> Attribution de permissions minimales nécessaires (principe du moindre privilège)</li>
+                <li><strong>Gestion des utilisateurs :</strong> Création d'utilisateurs dédiés par application, rotation régulière des mots de passe</li>
+            </ul>
+
+            <h3>2. Chiffrement des données</h3>
+            <ul>
+                <li><strong>Chiffrement au repos :</strong> Utilisation d'algorithmes AES-256 pour les fichiers de données et les backups</li>
+                <li><strong>Chiffrement en transit :</strong> Protocoles TLS 1.3 pour toutes les connexions (JDBC, ODBC)</li>
+                <li><strong>Chiffrement des données sensibles :</strong> Masquage des informations personnelles (PII) et financières</li>
+            </ul>
+
+            <h3>3. Audit et monitoring</h3>
+            <ul>
+                <li><strong>Logs d'audit :</strong> Enregistrement de toutes les opérations (SELECT, INSERT, UPDATE, DELETE) avec horodatage</li>
+                <li><strong>Détection d'intrusion :</strong> Mise en place de seuils d'alerte sur les tentatives d'accès suspectes</li>
+                <li><strong>Surveillance continue :</strong> Outils comme Oracle Audit Vault ou MySQL Enterprise Monitor</li>
+            </ul>
+
+            <h3>4. Prévention des attaques courantes</h3>
+            <ul>
+                <li><strong>Injection SQL :</strong> Utilisation exclusive de requêtes préparées (PreparedStatement en Java)</li>
+                <li><strong>Attaques par déni de service :</strong> Limitation des connexions simultanées et timeouts</li>
+                <li><strong>Exposition de données :</strong> Masquage des erreurs détaillées aux utilisateurs finaux</li>
+            </ul>
+
+            <h3>5. Conformité réglementaire</h3>
+            <ul>
+                <li><strong>RGPD :</strong> Droit à l'effacement, portabilité des données, minimisation des données collectées</li>
+                <li><strong>ISO 27001 :</strong> Système de management de la sécurité de l'information</li>
+                <li><strong>PCI DSS :</strong> Pour les données de paiement (niveau 1 pour les grandes entreprises)</li>
+            </ul>
+        </section>
+
+        <!-- OPTIMISATION -->
+        <section>
+            <h2>Optimisation des bases de données</h2>
+            <p>
+                L'optimisation vise à maintenir des performances élevées malgré la croissance des volumes de données et des charges de travail.
+            </p>
+
+            <h3>1. Indexation stratégique</h3>
+            <ul>
+                <li><strong>Index B-tree :</strong> Pour les recherches par égalité et plages de valeurs</li>
+                <li><strong>Index composites :</strong> Pour les requêtes multi-colonnes fréquentes</li>
+                <li><strong>Index partiels :</strong> Pour optimiser les requêtes sur sous-ensembles de données</li>
+                <li><strong>Maintenance :</strong> Reconstruction périodique des index fragmentés</li>
+            </ul>
+
+            <h3>2. Optimisation des requêtes</h3>
+            <ul>
+                <li><strong>Analyse des plans d'exécution :</strong> Utilisation d'EXPLAIN pour identifier les goulots d'étranglement</li>
+                <li><strong>Réécriture des requêtes :</strong> Élimination des sous-requêtes corrélées, utilisation de JOIN appropriés</li>
+                <li><strong>Pagination efficace :</strong> LIMIT/OFFSET vs curseurs pour les gros volumes</li>
+            </ul>
+
+            <h3>3. Architecture et conception</h3>
+            <ul>
+                <li><strong>Normalisation :</strong> Réduction de la redondance (3NF) vs dénormalisation pour les performances</li>
+                <li><strong>Partitionnement :</strong> Division horizontale/verticale pour distribuer la charge</li>
+                <li><strong>Sharding :</strong> Répartition des données sur plusieurs serveurs pour la scalabilité</li>
+            </ul>
+
+            <h3>4. Mise en cache et mémoire</h3>
+            <ul>
+                <li><strong>Cache de requêtes :</strong> Redis ou Memcached pour les données fréquemment accédées</li>
+                <li><strong>Buffer pool :</strong> Optimisation de la mémoire RAM pour InnoDB (MySQL)</li>
+                <li><strong>Cache d'application :</strong> Hibernate L2 cache pour les ORM Java</li>
+            </ul>
+
+            <h3>5. Monitoring et maintenance</h3>
+            <ul>
+                <li><strong>Métriques clés :</strong> Temps de réponse, taux d'utilisation CPU/IO, nombre de connexions</li>
+                <li><strong>Outils :</strong> Prometheus + Grafana, New Relic, ou outils natifs (MySQL Performance Schema)</li>
+                <li><strong>Maintenance proactive :</strong> VACUUM (PostgreSQL), OPTIMIZE TABLE (MySQL), sauvegardes incrémentielles</li>
+            </ul>
+        </section>
+
+        <!-- OUTILS ET BONNES PRATIQUES -->
+        <section>
+            <h2>Outils et bonnes pratiques</h2>
+
+            <h3>Outils recommandés</h3>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <strong>MySQL Enterprise</strong>
+                    <p>Monitor, audit, backup</p>
+                </div>
+                <div class="tech-item">
+                    <strong>PostgreSQL</strong>
+                    <p>Extensions pgcrypto, pg_stat_statements</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Oracle Database</strong>
+                    <p>Advanced Security, Data Guard</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Redis</strong>
+                    <p>Cache haute performance</p>
+                </div>
+            </div>
+
+            <h3>Bonnes pratiques opérationnelles</h3>
+            <ul>
+                <li><strong>Sauvegardes régulières :</strong> Stratégie 3-2-1 (3 copies, 2 supports différents, 1 hors site)</li>
+                <li><strong>Tests de restauration :</strong> Validation périodique des procédures de récupération</li>
+                <li><strong>Mises à jour de sécurité :</strong> Application rapide des patches critiques</li>
+                <li><strong>Formation continue :</strong> Sensibilisation des équipes aux risques de sécurité</li>
+            </ul>
+        </section>
+
+        <!-- CONCLUSION -->
+        <section>
+            <h2>Conclusion</h2>
+            <p>
+                La sécurisation et l'optimisation des bases de données en entreprise nécessitent une approche holistique combinant technologies, processus et compétences humaines. Les investissements dans ces domaines se traduisent par une réduction significative des risques de cyberattaques et une amélioration des performances applicatives, essentiels à la compétitivité des entreprises modernes.
+            </p>
+            <div class="info-box">
+                <strong>Perspectives d'évolution :</strong> L'adoption croissante du cloud (AWS RDS, Azure Database) et des bases de données NewSQL (CockroachDB, TiDB) offre de nouvelles opportunités pour renforcer la sécurité et l'évolutivité.
+            </div>
+        </section>
+
+        <!-- RESSOURCES -->
+        <section>
+            <h2>Ressources complémentaires</h2>
+            <ul>
+                <li><a href="https://www.oracle.com/database/security/" target="_blank">Oracle Database Security</a></li>
+                <li><a href="https://dev.mysql.com/doc/refman/8.0/en/security.html" target="_blank">MySQL Security Documentation</a></li>
+                <li><a href="https://www.postgresql.org/docs/current/security.html" target="_blank">PostgreSQL Security</a></li>
+                <li><a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP Top 10</a></li>
+                <li><a href="https://www.cnil.fr/fr/rgpd-de-a-a-z" target="_blank">RGPD - CNIL</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 — Veille Technologique • BTS SIO SLAM</p>
+    </footer>
+
+    <script src="Ranelle.js"></script>
+</body>
+</html>

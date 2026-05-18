@@ -17,7 +17,7 @@
 
 body {
 	font-family: 'Archivo', sans-serif;
-	background: var(--blanc);
+	background: var(--accent);
 	color: var(--noir);
 	line-height: 1.6;
 	overflow-x: hidden;
@@ -35,24 +35,74 @@ code, .mono {
 	justify-content: center;
 	padding: 2rem;
 	position: relative;
-	background: var(--blanc);
+	background: var(--accent);
 }
 
 .hero::before {
 	content: 'RANELLE MAMPOUYA';
 	position: absolute;
-	top: 2rem;
+	top: 1.2rem;
 	left: 2rem;
 	font-size: 0.75rem;
 	font-weight: 700;
 	letter-spacing: 0.2em;
-	opacity: 0.4;
+	opacity: 1;
+	color: var(--noir);
 }
 
 .hero-content {
 	max-width: 1200px;
 	margin: 0 auto;
 	animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-header {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	margin-bottom: 2rem;
+}
+
+.hero-image {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	border: 4px solid var(--noir);
+	object-fit: cover;
+	flex-shrink: 0;
+}
+
+.hero h1 {
+	font-size: clamp(2.5rem, 8vw, 7rem);
+	font-weight: 900;
+	line-height: 0.9;
+	margin-bottom: 0;
+	text-transform: uppercase;
+	margin-left: auto;
+	margin-right: -35rem;
+	color: var(--noir);
+}
+
+.hero h1 span {
+	display: block;
+	background: var(--accent);
+	padding: 0.2em 8vw;
+	width: 100%;
+	margin: 0.1em 0;
+	opacity: 0;
+	animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero h1 span:nth-child(1) {
+	animation-delay: 0.2s;
+}
+
+.hero h1 span:nth-child(2) {
+	animation-delay: 0.4s;
+}
+
+.hero h1 span:nth-child(3) {
+	animation-delay: 0.6s;
 }
 
 @keyframes fadeInUp {
@@ -66,30 +116,17 @@ code, .mono {
 	}
 }
 
-.hero h1 {
-	font-size: clamp(2.5rem, 8vw, 7rem);
-	font-weight: 900;
-	line-height: 0.9;
-	margin-bottom: 2rem;
-	text-transform: uppercase;
-}
-
-.hero h1 span {
-	display: block;
-	background: var(--accent);
-	padding: 0.2em 0.3em;
-	width: fit-content;
-	margin: 0.1em 0;
-}
-
 .manifesto {
-	max-width: 700px;
+	width: 100vw;
+	margin-left: calc(-50vw + 50%);
 	font-size: 1.2rem;
 	font-weight: 300;
-	margin: 3rem 0;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
 	padding: 2rem;
 	border-left: 4px solid var(--noir);
-	background: rgba(0, 255, 157, 0.05);
+	background: rgba(10, 10, 10, 0.1);
+	color: var(--noir);
 }
 
 .manifesto strong {
@@ -108,18 +145,19 @@ code, .mono {
 
 .badge {
 	padding: 0.5rem 1.2rem;
-	border: var(--border);
-	background: var(--blanc);
+	border: 2px solid var(--noir);
+	background: transparent;
 	font-family: 'JetBrains Mono', monospace;
 	font-size: 0.9rem;
 	font-weight: 700;
 	text-transform: uppercase;
 	transition: all 0.2s;
 	cursor: default;
+	color: var(--noir);
 }
 
 .badge:hover {
-	background: var(--noir);
+	background: var(--blanc);
 	color: var(--accent);
 	transform: translateY(-2px);
 }
@@ -146,12 +184,13 @@ nav ul {
 nav a {
 	text-decoration: none;
 	color: var(--noir);
-	font-weight: 600;
-	font-size: 0.9rem;
+	font-weight: 800;
+	font-size: 1rem;
 	text-transform: uppercase;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.12em;
 	position: relative;
-	padding-bottom: 0.25rem;
+	padding: 0.25rem 0.1rem;
+	transition: color 0.2s ease, transform 0.2s ease;
 }
 
 nav a::after {
@@ -160,12 +199,19 @@ nav a::after {
 	bottom: 0;
 	left: 0;
 	width: 0;
-	height: 2px;
+	height: 3px;
 	background: var(--accent);
-	transition: width 0.3s;
+	transition: width 0.25s ease;
 }
 
-nav a:hover::after {
+nav a:hover,
+nav a:focus {
+	color: var(--accent);
+	transform: translateY(-1px);
+}
+
+nav a:hover::after,
+nav a:focus::after {
 	width: 100%;
 }
 
