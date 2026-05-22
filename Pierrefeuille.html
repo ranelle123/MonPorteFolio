@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Projet Pierre-Feuille-Ciseaux</title>
+    <style>
+        /* ==========================================================================
+           1. Réinitialisation et Variables
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --primary-color: #7c3aed; /* Violet moderne axé application/jeu */
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ==========================================================================
+           2. Structure Principale
+           ========================================================================== */
+        .container {
+            flex: 1;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Petite barre violette sous le titre */
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* ==========================================================================
+           3. Zone de Documentation (Texte)
+           ========================================================================== */
+        .doc-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .doc-section h2 {
+            font-size: 1.35rem;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .doc-section p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background-color: #f1f5f9;
+            color: #475569;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ==========================================================================
+           4. Galerie d'Images
+           ========================================================================== */
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .image-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .caption {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #64748b;
+            text-align: center;
+        }
+
+        /* ==========================================================================
+           5. Pied de page (Footer)
+           ========================================================================== */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .back-link {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <h1>Projet personnel</h1>
+        
+        <!-- Fiche descriptive du jeu Pierre-Feuille-Ciseaux -->
+        <section class="doc-section">
+            <h2>Application Web - Jeu du Pierre-Feuille-Ciseaux</h2>
+            <p>
+                Ce projet consiste en la réalisation d'une application de jeu interactive. L'objectif principal est de développer une logique algorithmique solide pour gérer le choix aléatoire de l'ordinateur, le choix de l'utilisateur, et déterminer de manière automatisée le vainqueur de chaque manche selon les règles du jeu.
+            </p>
+            <p>
+                Le script intègre également la gestion dynamique du DOM pour mettre à jour les scores en temps réel, afficher les animations des choix et réinitialiser la partie. Ce projet démontre la maîtrise des structures conditionnelles complexes et des événements utilisateurs.
+            </p>
+            <div class="tech-tags">
+                <span class="tag">JavaScript (ES6)</span>
+                <span class="tag">Manipulation du DOM</span>
+                <span class="tag">Algorithmique</span>
+                <span class="tag">HTML5 / CSS3</span>
+            </div>
+        </section>
+        
+        <!-- Section d'affichage de la capture d'écran du jeu -->
+        <div class="image-gallery">
+            <div class="image-card">
+                <img src="images/PierrreFeuille.png" alt="Interface du jeu Pierre Feuille Ciseaux">
+                <p class="caption">Interface de l'application et rendu visuel des parties de jeu</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        
+            <a href="index.html" class="back-link">Retour au portfolio</a>
+        </p>
+    </footer>
+
+</body>
+</html>
