@@ -1,4 +1,4 @@
-lien live : https://ranelle123.github.io/MonPorteFolio/
+# Voir le visuel: https://ranelle123.github.io/MonPorteFolio/
 
 # MonPorteFolio
 
