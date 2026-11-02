@@ -75,8 +75,8 @@ code, .mono {
 .hero-qr-code {
 	align-self: flex-start;
 	margin-top: 2.5rem;
-	width: 6rem;
-	height: 6rem;
+	width: 7rem;
+	height: 7rem;
 	padding: 0.3rem;
 	border: 2px solid var(--noir);
 	border-radius: 8px;
@@ -578,8 +578,8 @@ footer a {
 	}
 
 	.hero-qr-code {
-		width: 5rem;
-		height: 5rem;
+		width: 6rem;
+		height: 6rem;
 	}
     
 	.section-title {
